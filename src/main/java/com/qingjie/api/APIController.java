@@ -1,6 +1,7 @@
 package com.qingjie.api;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,9 +16,9 @@ public class APIController {
 	@Autowired
 	private UserClient userClient;
 
-	@GetMapping("/findAllUsers")
-	public List<UserResponse> getAllUsers() {
-		return userClient.getUsers();
+	@GetMapping("/user/hello")
+	public Map<String, String> sayHello() {
+		return userClient.sayHello();
 	}
 
 }
